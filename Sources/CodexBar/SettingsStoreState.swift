@@ -33,4 +33,6 @@ struct SettingsDefaultsState: Sendable {
     var mergedOverviewSelectedProvidersRaw: [String]
     var selectedMenuProviderRaw: String?
     var providerDetectionCompleted: Bool
+    var hasCompletedOnboarding: Bool
+    var fetchingIndicatorEnabled: Bool
 }

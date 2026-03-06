@@ -222,6 +222,10 @@ extension SettingsStore {
             forKey: "mergedOverviewSelectedProviders") as? [String] ?? []
         let selectedMenuProviderRaw = userDefaults.string(forKey: "selectedMenuProvider")
         let providerDetectionCompleted = userDefaults.object(forKey: "providerDetectionCompleted") as? Bool ?? false
+        let hasCompletedOnboarding = userDefaults.object(forKey: "hasCompletedOnboarding") as? Bool ?? false
+        let fetchingIndicatorDefault = userDefaults.object(forKey: "fetchingIndicatorEnabled") as? Bool
+        let fetchingIndicatorEnabled = fetchingIndicatorDefault ?? true
+        if fetchingIndicatorDefault == nil { userDefaults.set(true, forKey: "fetchingIndicatorEnabled") }
 
         return SettingsDefaultsState(
             refreshFrequency: refreshFrequency,
@@ -255,7 +259,9 @@ extension SettingsStore {
             mergedMenuLastSelectedWasOverview: mergedMenuLastSelectedWasOverview,
             mergedOverviewSelectedProvidersRaw: mergedOverviewSelectedProvidersRaw,
             selectedMenuProviderRaw: selectedMenuProviderRaw,
-            providerDetectionCompleted: providerDetectionCompleted)
+            providerDetectionCompleted: providerDetectionCompleted,
+            hasCompletedOnboarding: hasCompletedOnboarding,
+            fetchingIndicatorEnabled: fetchingIndicatorEnabled)
     }
 }
 

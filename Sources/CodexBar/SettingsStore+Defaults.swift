@@ -466,6 +466,22 @@ extension SettingsStore {
         }
     }
 
+    var hasCompletedOnboarding: Bool {
+        get { self.defaultsState.hasCompletedOnboarding }
+        set {
+            self.defaultsState.hasCompletedOnboarding = newValue
+            self.userDefaults.set(newValue, forKey: "hasCompletedOnboarding")
+        }
+    }
+
+    var fetchingIndicatorEnabled: Bool {
+        get { self.defaultsState.fetchingIndicatorEnabled }
+        set {
+            self.defaultsState.fetchingIndicatorEnabled = newValue
+            self.userDefaults.set(newValue, forKey: "fetchingIndicatorEnabled")
+        }
+    }
+
     var debugLoadingPattern: LoadingPattern? {
         get { self.debugLoadingPatternRaw.flatMap(LoadingPattern.init(rawValue:)) }
         set { self.debugLoadingPatternRaw = newValue?.rawValue }

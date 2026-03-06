@@ -77,6 +77,9 @@ final class StatusItemController: NSObject, NSMenuDelegate, StatusItemControllin
     var animationDriver: DisplayLinkDriver?
     var animationPhase: Double = 0
     var animationPattern: LoadingPattern = .knightRider
+    var fetchingDotItems: [UsageProvider: NSStatusItem] = [:]
+    var dotAnimationDriver: DisplayLinkDriver?
+    var dotAnimationPhase: Double = 0
     private var lastConfigRevision: Int
     private var lastProviderOrder: [UsageProvider]
     private var lastMergeIcons: Bool
@@ -214,6 +217,7 @@ final class StatusItemController: NSObject, NSMenuDelegate, StatusItemControllin
                 self.invalidateMenus()
                 self.updateIcons()
                 self.updateBlinkingState()
+                self.updateFetchingIndicators()
             }
         }
     }

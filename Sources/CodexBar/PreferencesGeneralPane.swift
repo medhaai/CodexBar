@@ -96,6 +96,11 @@ struct GeneralPane: View {
                         subtitle: "Notifies when the 5-hour session quota hits 0% and when it becomes " +
                             "available again.",
                         binding: self.$settings.sessionQuotaNotificationsEnabled)
+                    PreferenceToggleRow(
+                        title: "Show fetch indicator",
+                        subtitle: "Displays a pulsing dot beside the menu bar icon while CodexBar is " +
+                            "fetching data from a provider.",
+                        binding: self.$settings.fetchingIndicatorEnabled)
                 }
 
                 Divider()

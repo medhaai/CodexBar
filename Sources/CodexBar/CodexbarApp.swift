@@ -277,6 +277,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 self?.statusController?.openMenuFromShortcut()
             }
         }
+        if let settings = self.settings, !settings.hasCompletedOnboarding {
+            OnboardingWindowController.shared.show(settings: settings)
+        }
     }
 
     func applicationWillTerminate(_ notification: Notification) {
