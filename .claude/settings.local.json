@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -l \"onboard\\\\|onboarding\\\\|welcome\\\\|first.launch\\\\|first.run\" /c/Users/NiravKanakia/Desktop/src/dev/CodexBar/Sources/CodexBar/*.swift)",
+      "Bash(grep -l \"animation\\\\|animate\\\\|transition\\\\|Loading\\\\|Blink\" /c/Users/NiravKanakia/Desktop/src/dev/CodexBar/Sources/CodexBar/*.swift)"
+    ]
+  }
+}
